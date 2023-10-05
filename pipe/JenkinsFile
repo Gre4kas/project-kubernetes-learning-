@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'docker build -t web .'
+            }
+        }
+
+        stage('Push') {
+            steps {
+                sh 'docker push web'
+            }
+        }
+    }
+}
