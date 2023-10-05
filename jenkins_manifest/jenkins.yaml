@@ -33,7 +33,7 @@ spec:
           resources:
             limits:
               cpu: 1
-              memory: 1Gi
+              memory: 2Gi
           env:
             - name: LIMITS_MEMORY
               valueFrom:
