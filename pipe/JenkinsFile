@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t web .'
+                sh 'docker build -t ${DOCKER_USERNAME}/web:${env.BUILD_NUMBER} .'
             }
         }
 
         stage('Push') {
             steps {
-                sh 'docker push web'
+                sh 'docker ${DOCKER_USERNAME}/push web:${env.BUILD_NUMBER}'
             }
         }
     }
