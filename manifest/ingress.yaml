@@ -3,10 +3,16 @@ kind: Ingress
 metadata:
   name: hello-world-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    # cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
+  tls:
+  - hosts:
+      - gre4ka.fun
+    secretName: coffee-secret-tls
+  ingressClassName: nginx
   rules:
-  - host: gre4ka.org
+  - host: gre4ka.fun
     http:
       paths:
       - path: /
@@ -16,7 +22,3 @@ spec:
             name: my-web-app
             port:
               number: 80
-  tls:
-  - hosts:
-      - gre4ka.org
-    secretName: coffee-secret-tls
