@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: my-web-app
-        image: da1ly/web:1.2
+        # image: da1ly/web:1.2
+        image: da1ly/web:2.1.2
         ports:
         - containerPort: 80
         resources:
