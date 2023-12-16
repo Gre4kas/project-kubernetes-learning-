@@ -1,5 +1,5 @@
 namespace: dev
 configmap:
   data: 
-    CUSTOM_HEADER: " Welcome to Dev"
+    CUSTOM_HEADER: "Dev"
 
