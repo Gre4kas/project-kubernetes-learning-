@@ -57,10 +57,6 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     # cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
-  tls:
-  - hosts:
-      - gre4ka.fun
-    secretName: coffee-secret-tls
   ingressClassName: nginx
   rules:
   - host: gre4ka.fun
