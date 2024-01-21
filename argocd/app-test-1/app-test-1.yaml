@@ -62,7 +62,7 @@ spec:
   - host: gre4ka.fun
     http:
       paths:
-      - path: /test
+      - path: /
         pathType: Prefix
         backend:
           service:
