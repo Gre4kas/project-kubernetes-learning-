@@ -10,7 +10,7 @@ metadata:
   name: my-web-app
   namespace: app-test-1
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: my-web-app
@@ -22,14 +22,14 @@ spec:
       containers:
       - name: my-web-app
         # image: da1ly/web:1.2
-        # image: da1ly/web:2.1.2
-        image: nginx
+        image: da1ly/web:2.1.2
+        # image: nginx
         ports:
         - containerPort: 80
         resources:
           limits:
             memory: "512Mi"
-            cpu: "100m"
+            cpu: "500m"
 
 
 ---
