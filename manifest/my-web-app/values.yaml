@@ -1,0 +1,43 @@
+replicaCount: 1
+
+image:
+  repository: da1ly/web
+  tag: "2.1.2"
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    memory: "512Mi"
+    cpu: "500m"
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-redirect-from: http://
+    nginx.ingress.kubernetes.io/proxy-redirect-to: https://
+    nginx.ingress.kubernetes.io/proxy-body-size: 10m
+    nginx.ingress.kubernetes.io/server-snippet: |
+      gzip on;
+      gzip_disable "msie6";
+      gzip_comp_level 5;
+      gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  tls:
+    - hosts:
+        - gre4ka.fun
+      secretName: coffee-secret-tls
+  hosts:
+    - host: gre4ka.fun
+      paths:
+        - path: /
+          pathType: Prefix
+
+namespace: app-test-1
