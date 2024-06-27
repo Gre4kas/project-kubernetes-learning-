@@ -26,7 +26,7 @@ spec:
         image: da1ly/porfolio:0.1.6
         # image: nginx
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         resources:
           limits:
             memory: "512Mi"
