@@ -22,7 +22,8 @@ spec:
       containers:
       - name: my-web-app
         # image: da1ly/web:1.2
-        image: da1ly/web:2.1.2
+        # image: da1ly/web:2.1.2
+        image: da1ly/website:0.1.0
         # image: nginx
         ports:
         - containerPort: 80
