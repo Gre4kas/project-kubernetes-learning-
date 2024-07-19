@@ -53,6 +53,6 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git add argocd/app-test-1/app-test-1.yaml
           git commit -m "Update ArgoCD manifest with new Docker image tag"
-          git push origin main
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
