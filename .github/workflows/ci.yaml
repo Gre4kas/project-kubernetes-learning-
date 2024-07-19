@@ -44,7 +44,6 @@ jobs:
 
       - name: Update ArgoCD manifest
         run: |
-          git checkout main
           cd argocd/app-test-1/
           sed -i 's|image: da1ly/porfolio:.*|image: ${{ secrets.DOCKER_USERNAME }}/app:latest|' app-test-1.yaml
   
@@ -52,7 +51,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add argocd/app-test-1/app-test-1.yaml
+          git app-test-1.yaml
           git commit -m "Update ArgoCD manifest with new Docker image tag"
           git push
         env:
