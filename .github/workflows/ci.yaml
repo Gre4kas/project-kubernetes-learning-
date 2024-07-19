@@ -44,6 +44,7 @@ jobs:
 
       - name: Update ArgoCD manifest
         run: |
+          git checkout main
           cd argocd/app-test-1/
           sed -i 's|image: da1ly/porfolio:.*|image: ${{ secrets.DOCKER_USERNAME }}/app:latest|' app-test-1.yaml
   
