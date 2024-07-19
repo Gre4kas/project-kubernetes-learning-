@@ -51,7 +51,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git app-test-1.yaml
+          git add app-test-1.yaml
           git commit -m "Update ArgoCD manifest with new Docker image tag"
           git push
         env:
