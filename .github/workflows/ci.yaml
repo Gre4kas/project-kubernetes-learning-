@@ -46,7 +46,7 @@ jobs:
         run: |
           ls -al
           IMAGE_TAG=${{ steps.meta.outputs.tags }}
-          sed -i "s|image: da1ly/porfolio:.*|image: ${{ secrets.DOCKER_USERNAME }}/app:latest|" argocd/app-test-1/app-test-1.yaml
+          sed -i 's|image: da1ly/porfolio:.*|image: ${{ secrets.DOCKER_USERNAME }}/app:latest|' argocd/app-test-1/app-test-1.yaml
   
       - name: Commit and push ArgoCD manifest update
         run: |
