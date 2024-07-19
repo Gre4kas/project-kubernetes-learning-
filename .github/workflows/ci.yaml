@@ -3,7 +3,7 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - main
+      - ci-cd
 jobs:
   build:
     name: Push Docker image to Docker Hub
@@ -41,3 +41,12 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: Commit and push ArgoCD manifest update
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add argocd/app-test-1/app-test-1.yaml
+          git commit -m "Update ArgoCD manifest with new Docker image tag"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
