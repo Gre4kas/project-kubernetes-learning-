@@ -22,13 +22,14 @@ spec:
       containers:
       - name: my-web-app
         # image: da1ly/web:1.2
-        image: da1ly/web:2.1.2
+        # image: da1ly/web:2.1.2
+        image: da1ly/porfolio:0.1.6
         # image: nginx
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         resources:
           limits:
-            memory: "512Mi"
+            memory: "1024Mi"
             cpu: "500m"
 
 
@@ -45,8 +46,8 @@ spec:
     app: my-web-app
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 3000
+    targetPort: 3000
 
 ---
 
