@@ -44,6 +44,7 @@ jobs:
 
       - name: Update ArgoCD manifest
         run: |
+          ls -l
           cd manifest/app-test-1
           IMAGE_TAG=$(echo ${{ steps.meta.outputs.tags }} | tr ',' '\n' | grep 'sha-')
           sed -i "s|image: da1ly/app:.*|image: ${{ secrets.DOCKER_USERNAME }}/app:${IMAGE_TAG}|" app-test-1.yaml
