@@ -47,6 +47,9 @@ jobs:
           cd manifest/app-test-1
           IMAGE_TAG=$(echo ${{ steps.meta.outputs.tags }} | cut -d',' -f1)
           sed -i "s|image: da1ly/app:.*|image: ${IMAGE_TAG}|" app-test-1.yaml
+
+      - name: Display ArgoCD manifest after update
+        run: cat manifest/app-test-1/app-test-1.yaml
   
       - name: Commit and push ArgoCD manifest update
         run: |
