@@ -23,7 +23,7 @@ spec:
       - name: my-web-app
         # image: da1ly/web:1.2
         # image: da1ly/web:2.1.2
-        image: da1ly/app:da1ly/app:latest
+        image: da1ly/app:latest
         # image: nginx
         ports:
         - containerPort: 80
