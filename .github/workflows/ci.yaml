@@ -3,7 +3,7 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - ci-cd
+      - main
 jobs:
   build:
     name: Push Docker image to Docker Hub
