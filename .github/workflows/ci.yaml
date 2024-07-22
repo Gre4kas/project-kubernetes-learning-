@@ -45,7 +45,8 @@ jobs:
       - name: Update ArgoCD manifest
         run: |
           cd manifest/app-test-1
-          sed -i 's|image: da1ly/app:.*|image: ${{ secrets.DOCKER_USERNAME }}/app:${{ steps.meta.outputs.tags }}|' app-test-1.yaml
+          IMAGE_TAG=$(echo ${{ steps.meta.outputs.tags }} | cut -d',' -f2)
+          sed -i "s|image: da1ly/app:.*|image: ${{ secrets.DOCKER_USERNAME }}/app:${IMAGE_TAG}|" app-test-1.yaml
   
       - name: Commit and push ArgoCD manifest update
         run: |
