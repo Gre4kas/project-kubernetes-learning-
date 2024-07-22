@@ -28,7 +28,7 @@ spec:
           service:
             name: {{ include "my-web-app.fullname" $ }}
             port:
-              number: {{ $root.Values.service.port }}
+              number: {{ $.Values.service.port }}
       {{- end }}
   {{- end }}
 {{- end }}
