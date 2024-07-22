@@ -26,7 +26,7 @@ spec:
         image: da1ly/app:latest
         # image: nginx
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         resources:
           limits:
             memory: "1024Mi"
@@ -46,8 +46,8 @@ spec:
     app: my-web-app
   ports:
   - protocol: TCP
-    port: 3000
-    targetPort: 3000
+    port: 80
+    targetPort: 80
 
 ---
 
