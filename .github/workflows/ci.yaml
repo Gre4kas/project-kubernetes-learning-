@@ -50,7 +50,6 @@ jobs:
       - name: Commit and push ArgoCD manifest update
         run: |
           cd argocd/app-test-1/
-          git checkout ci-cd
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add app-test-1.yaml
