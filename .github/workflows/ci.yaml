@@ -44,12 +44,11 @@ jobs:
 
       - name: Update ArgoCD manifest
         run: |
-          cd argocd/app-test-1/
+          cd manifest/app-test-1
           sed -i 's|image: da1ly/porfolio:.*|image: ${{ secrets.DOCKER_USERNAME }}/app:latest|' app-test-1.yaml
   
       - name: Commit and push ArgoCD manifest update
         run: |
-          ls -l
           cd manifest/app-test-1
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
