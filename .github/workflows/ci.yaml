@@ -49,7 +49,7 @@ jobs:
           ls -l
           IMAGE_TAG=$(echo "${{ steps.meta.outputs.tags }}" | tr ',' '\n' | grep 'sha-')
           echo "Extracted IMAGE_TAG: ${IMAGE_TAG}"
-          sed -i "s|image: da1ly/app:.*|image: ${{ secrets.DOCKER_USERNAME }}/app:${IMAGE_TAG}|" app-test-1.yaml
+          sed -i "s|image: da1ly/app:.*|image: ${IMAGE_TAG}|" app-test-1.yaml
 
       - name: Display ArgoCD manifest after update
         run: cat manifest/app-test-1/app-test-1.yaml
