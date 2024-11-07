@@ -1,5 +1,0 @@
-apiVersion: v2
-name: my-web-app
-description: A Helm chart for Kubernetes
-version: 0.1.0
-appVersion: "2.1.2"
