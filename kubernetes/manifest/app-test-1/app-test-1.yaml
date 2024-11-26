@@ -65,11 +65,11 @@ metadata:
 spec:
   tls:
   - hosts:
-      - gre4ka.fun
+      - gre4kas.fun
     secretName: coffee-secret-tls
   ingressClassName: nginx
   rules:
-  - host: gre4ka.fun
+  - host: gre4kas.fun
     http:
       paths:
       - path: /
