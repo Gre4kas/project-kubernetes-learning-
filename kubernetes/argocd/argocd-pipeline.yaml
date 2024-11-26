@@ -8,7 +8,7 @@ spec:
     namespace: app-test-1
     server: 'https://kubernetes.default.svc'
   source:
-    path: ./kubernetes/manifest/app-test-1/
+    path: kubernetes/manifest/app-test-1
     repoURL: 'https://github.com/Gre4kas/project-kubernetes-learning-.git'
     targetRevision: main
   sources: []
